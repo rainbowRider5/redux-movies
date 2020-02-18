@@ -1,0 +1,15 @@
+.Header{
+    height: 100px;
+    background: #002550;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    box-shadow: 0px 11px 18px -8px rgba(0,0,0,0.61);
+
+    &__title{
+        color: #fff;
+        letter-spacing: 1.5px;
+        font-weight: 400;
+        margin: 0 2em;
+    }
+}
