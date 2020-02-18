@@ -2,8 +2,10 @@
   "name": "redux-movies",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://mdrzewiecki56.github.io/redux-movies",
   "dependencies": {
     "axios": "^0.19.2",
+    "gh-pages": "^2.2.0",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -15,6 +17,8 @@
     "uuid": "^3.4.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
