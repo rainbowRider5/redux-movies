@@ -1,12 +1,20 @@
-export const search = (value = "") =>{
-    return {
-        type: 'SEARCH',
-        payload: value
-    };
-}
+import axios from 'axios';
 
-export const shuffle = () =>{
-    return {
-        type: 'SHUFFLE',
-    };
+export function search(title) {
+    return function(dispatch) {
+      dispatch({
+        type: "LIST_REQUESTED",
+      });
+      
+      axios.get(`http://www.omdbapi.com/?apikey=51122a9b&s=${title}`)
+      .then(data => dispatch({
+          type: "LIST_RECEIVED",
+          payload: data
+        }))
+      .catch(error => dispatch({
+          type: "LIST_FAILED",
+          payload: error
+        })
+      );
+    }
 }

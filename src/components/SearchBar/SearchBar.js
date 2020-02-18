@@ -1,15 +1,14 @@
 import React from 'react';
 import "./SearchBar.scss";
-import {useSelector, useDispatch} from 'react-redux';
-import {useState, useEffect} from 'react';
+import {useDispatch} from 'react-redux';
+import {useState} from 'react';
 import {search} from '../../actions';
 
 function SearchBar() {
-    const movies = useSelector(state => state.searchReducer);
+    
     const dispatch = useDispatch();
     const [value, setState] = useState("");
-
-    console.log(movies);
+    
     return (
         <form className="SearchBar">
                 <input 
